@@ -18,8 +18,59 @@
             </div>
         </div>
         <body>
-            <script src = "myScript.js">
-                document.writeIn(" Welcome to Store! What is your name?")
+            <script>
+                
+                var name;
+                name = window.prompt("Please enter your name :");
+                document.writeln("Hello, " + name + ". ")
+                var thing;
+                thing = window.prompt("Please enter an item you want to buy?")
+                var amount;
+                amount = window.prompt("How many do you want? 1 - 99")
+
+                if(isNaN(amount) == false)
+                {
+                    if(amount <= 99 && amount >=1)
+                    {
+                        document.write("You want " + amount +" " + thing + ".")
+                        document.getElementById("demo").innerHTML = time;
+
+                    }
+                    else if(amount < 1)
+                    {
+                        document.write("That amount is too little.")
+                    }
+                    else if(amount >1)
+                    {
+                        document.write("That amount is too much.")
+                    }
+                }
+
+                else if(isNaN(amount)){
+                document.writeln(amount +" is not a number.")
+            }
+ 
+           
+
+            </script>
+            <script>
+                now = new Date();
+                hour = now.getHours();
+                if(hour < 12)
+            {
+                document.write("<br>Good Morning " + name + ".<br>Thank you for ordering with us.")
+            }
+            else if(hour < 18)
+            {
+                document.write("<br>Good Afternoon "+ name + ".<br>Thank you for ordering with us.")
+            }
+            else
+            {
+                document.write("<br>Good Evening " + name + ".<br>Thank you for ordering with us.")
+            }
+            var delivery = now;
+            delivery.setDate(now.getDate() + 7);
+            document.write(" Your order will come in " + delivery );
 
             </script>
         </body>
